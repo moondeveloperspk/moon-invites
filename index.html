@@ -6,24 +6,26 @@
 <title>Moon Invitations</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500;600&family=Great+Vibes&family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;600;700&family=Noto+Nastaliq+Urdu:wght@400;600&family=Pinyon+Script&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;600;700&family=Noto+Nastaliq+Urdu:wght@400;600&display=swap" rel="stylesheet">
 <style>
+/* Urdu font: uses Jameel Noori Nastaleeq if installed, or the file JameelNooriNastaleeq.ttf placed next to index.html */
+@font-face{font-family:'Jameel Noori Nastaleeq';src:local('Jameel Noori Nastaleeq'),local('JameelNooriNastaleeq'),local('Jameel Noori Nastaleeq Regular'),url('JameelNooriNastaleeq.ttf') format('truetype');font-display:swap}
 :root{--ink:#0e1512;--ink2:#16201b;--line:#2b3a32;--ivory:#f3ecdc;--mute:#a9b2a6;--accent:#c9a45c;--on-accent:#0e1512;--bar:rgba(14,21,18,.92);--danger:#d9695f;--ok:#6fbf8b;--fd:'Cormorant Garamond',Georgia,serif}
 /* ---- template palettes (add a new template = add a block here + one entry in TPL in the script) ---- */
 body.tpl-royal{--ink:#0a1a14;--ink2:#112a1f;--ivory:#f4ead2;--mute:#a8baab;--line:#2a4d3c;--accent:#d8b56c;--on-accent:#0a1a14;--bar:rgba(10,26,20,.93);--fd:'Cormorant Garamond',Georgia,serif;
  --pat:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Cg fill='none' stroke='%23d8b56c' stroke-opacity='.12'%3E%3Crect x='23' y='23' width='44' height='44'/%3E%3Crect x='23' y='23' width='44' height='44' transform='rotate(45 45 45)'/%3E%3Ccircle cx='45' cy='45' r='31'/%3E%3C/g%3E%3C/svg%3E")}
 body.tpl-blush{--ink:#fcf4f0;--ink2:#ffffff;--ivory:#4a2d33;--mute:#7a5d62;--line:#efd5d2;--accent:#b4536a;--on-accent:#ffffff;--bar:rgba(252,244,240,.94);--fd:'Cormorant Garamond',Georgia,serif}
-body.tpl-noir{--ink:#06060c;--ink2:#0e0e18;--ivory:#efe9df;--mute:#9391a2;--line:#24243a;--accent:#e6c79c;--on-accent:#06060c;--bar:rgba(6,6,12,.93);--fd:'Bodoni Moda',Georgia,serif}
+body.tpl-noir{--ink:#06060c;--ink2:#0e0e18;--ivory:#efe9df;--mute:#9391a2;--line:#24243a;--accent:#e6c79c;--on-accent:#06060c;--bar:rgba(6,6,12,.93);--fd:'Cormorant Garamond',Georgia,serif}
 
 *{box-sizing:border-box}
 html,body{margin:0}
 html{scroll-behavior:smooth}
 body{background:var(--ink);color:var(--ivory);font:16px/1.65 Manrope,system-ui,sans-serif;-webkit-font-smoothing:antialiased;padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom)}
 .serif,.disp{font-family:var(--fd)}
-.script{font-family:'Pinyon Script','Cormorant Garamond',cursive;font-weight:400}
-.nast{font-family:'Noto Nastaliq Urdu',serif}
+.script{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600}
+.nast{font-family:'Jameel Noori Nastaleeq','Noto Nastaliq Urdu',serif}
 body.lang-ur{direction:rtl}
-body.lang-ur .serif,body.lang-ur .disp,body.lang-ur .script,body.lang-ur .ur{font-family:'Noto Nastaliq Urdu','Cormorant Garamond',serif;line-height:2.1}
+body.lang-ur .serif,body.lang-ur .disp,body.lang-ur .script,body.lang-ur .ur{font-family:'Jameel Noori Nastaleeq','Noto Nastaliq Urdu','Cormorant Garamond',serif;line-height:2.1}
 body.lang-ur .en{display:none}
 body.lang-en .ur{display:none}
 a{color:var(--accent)}
@@ -83,17 +85,17 @@ h1,h2,h3,h4{margin:0}
 .fl2{bottom:0;inset-inline-end:0;transform:scaleX(-1)}
 body.lang-ur .fl1{transform:scale(-1,-1)}
 body.lang-ur .fl2{transform:none}
-.b-hero .script{font-size:clamp(56px,17vw,100px);line-height:1;margin:4px 0}
+.b-hero .script{font-size:clamp(40px,12vw,68px);line-height:1.1;margin:4px 0}
 body.lang-ur .b-hero .script{font-size:clamp(34px,10vw,56px);line-height:1.9}
-.b-amp{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:30px;color:var(--accent);margin:2px 0}
-.b-hero .hd{margin-top:18px;font-style:italic;font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--mute)}
+.b-amp{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:30px;color:var(--accent);margin:2px 0}
+.b-hero .hd{margin-top:18px;font-style:italic;font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;color:var(--mute)}
 /* noir */
 .n-hero{align-items:flex-start;justify-content:flex-end;text-align:start;padding:90px 26px 80px;
  background:radial-gradient(1.2px 1.2px at 12% 18%,#fff 50%,transparent),radial-gradient(1px 1px at 28% 62%,#fff 50%,transparent),radial-gradient(1.4px 1.4px at 44% 12%,#fff 50%,transparent),radial-gradient(1px 1px at 63% 38%,#fff 50%,transparent),radial-gradient(1.2px 1.2px at 78% 74%,#fff 50%,transparent),radial-gradient(1px 1px at 90% 22%,#fff 50%,transparent),radial-gradient(1px 1px at 8% 86%,#fff 50%,transparent),radial-gradient(1.2px 1.2px at 52% 90%,#fff 50%,transparent),var(--ink)}
 .moon{position:absolute;top:5%;inset-inline-end:-6%;width:min(84vw,400px);height:auto;color:var(--accent);pointer-events:none}
 .n-names{position:relative}
 .n-names h2{font-family:var(--fd);font-size:clamp(48px,15vw,110px);line-height:.96;font-weight:500;letter-spacing:-.02em}
-body.lang-ur .n-names h2{font-family:'Noto Nastaliq Urdu',serif;font-size:clamp(34px,10vw,66px);line-height:1.8;letter-spacing:0}
+body.lang-ur .n-names h2{font-family:'Jameel Noori Nastaleeq','Noto Nastaliq Urdu',serif;font-size:clamp(34px,10vw,66px);line-height:1.8;letter-spacing:0}
 .n-amp{font-family:var(--fd);font-size:34px;color:var(--accent);margin:6px 0;font-style:italic}
 .n-date{position:relative;margin-top:28px;font-family:var(--fd);font-size:22px;letter-spacing:.18em;color:var(--accent)}
 .n-hero small{position:relative;margin-bottom:10px}
@@ -104,7 +106,7 @@ section.blk{padding:70px 0;border-top:1px solid var(--line)}
 .blk h3{font-size:36px;font-weight:500;margin:0 0 24px}
 .fam{display:grid;gap:6px;margin:22px 0}
 .fam b{font-size:28px;font-weight:500}
-.tpl-blush .fam b,.tpl-card .fam b{font-family:'Pinyon Script',cursive;font-size:40px;font-weight:400}
+.tpl-blush .fam b,.tpl-card .fam b{font-family:'Cormorant Garamond',Georgia,serif;font-size:40px;font-weight:400}
 .fam span{color:var(--mute)}
 .rsvpnames{color:var(--mute);font-size:14px;margin-top:20px}
 .rsvpnames ol{list-style:none;padding:0;margin:8px 0;text-align:center}
@@ -136,7 +138,7 @@ section.blk{padding:70px 0;border-top:1px solid var(--line)}
 .tl-d{display:flex;align-items:baseline;gap:8px;color:var(--accent)}
 .tl-d b{font-family:var(--fd);font-size:46px;font-weight:500;line-height:1}
 .tl-d span{font-size:16px}
-.tl-i h4{font-family:'Pinyon Script',cursive;font-weight:400;font-size:40px;line-height:1.2;margin:6px 0 2px}
+.tl-i h4{font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;font-size:40px;line-height:1.2;margin:6px 0 2px}
 body.lang-ur .tl-i h4{font-size:26px}
 /* events: noir rows */
 .n-evs{border-top:1px solid var(--line);text-align:start}
@@ -161,7 +163,7 @@ input[type=checkbox],input[type=radio]{width:auto}
 .know{list-style:none;padding:0;margin:0;color:var(--mute)}
 .foot{padding:56px 0 100px;text-align:center;color:var(--mute);font-size:14px;border-top:1px solid var(--line)}
 .foot .names{font-size:32px;color:var(--ivory);line-height:1.3}
-.tpl-blush .foot .names,.tpl-card .foot .names{font-family:'Pinyon Script',cursive;font-size:44px;font-weight:400}
+.tpl-blush .foot .names,.tpl-card .foot .names{font-family:'Cormorant Garamond',Georgia,serif;font-size:44px;font-weight:400}
 .foot .evact{justify-content:center}
 .tpl-noir .center,.tpl-noir .foot{text-align:start}
 .tpl-noir .foot .evact{justify-content:flex-start}
@@ -212,11 +214,11 @@ body.tpl-card{--ink:#e9e4d8;--ink2:#f6f0e2;--ivory:#5b2a37;--mute:#85626a;--line
 body.lang-ur .c-hero .script{font-size:min(13cqw,40px);line-height:1.9}
 .c-hero .c-bism{font-size:19px;margin:6px 0 12px}
 .c-hero .cap{font-size:10.5px;letter-spacing:.12em}
-.c-amp{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--accent);font-size:26px;margin:2px 0}
-.c-hero .hd{margin:16px 0 0;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:var(--mute)}
+.c-amp{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;color:var(--accent);font-size:26px;margin:2px 0}
+.c-hero .hd{margin:16px 0 0;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:19px;color:var(--mute)}
 .c-evs{display:grid;gap:22px}
 .c-ev{border:10px solid var(--cream);border-radius:20px;padding:22px 16px;background:rgba(255,255,255,.35);box-shadow:0 5px 14px rgba(90,60,40,.16),inset 0 0 0 1px #e3d7bd}
-.c-ev h4{font-family:'Pinyon Script',cursive;font-weight:400;font-size:42px;line-height:1.2;color:var(--accent)}
+.c-ev h4{font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;font-size:42px;line-height:1.2;color:var(--accent)}
 body.lang-ur .c-ev h4{font-size:28px}
 .c-ev .evact{justify-content:center}
 /* top controls, music button */
@@ -235,14 +237,14 @@ symbol{overflow:visible}
 .hero>svg,.mr-box>svg{overflow:visible}
 body.tpl-redgold{--ink:#f6ecd7;--ink2:#fff9ec;--ivory:#2b1b14;--mute:#6f5a49;--line:#e2cd9b;--accent:#a31621;--on-accent:#ffffff;--bar:rgba(246,236,215,.94);--gold:#c9a24a;--fd:'Cormorant Garamond',Georgia,serif;background:radial-gradient(circle at 70% 0,#fffaf0,#f0e0bd)}
 body.tpl-maroon{--ink:#dcd8d4;--ink2:#f3eee8;--ivory:#5e1f2b;--mute:#6f5559;--line:#d0c3b5;--accent:#7a2e3a;--on-accent:#ffffff;--bar:rgba(220,216,212,.94);--gold:#c4a35a;--fd:'Cormorant Garamond',Georgia,serif;--bd:#7a1f2d;--bd2:#5c1522;--tr:#d6a84a;--gm:#1b1b20;--gm2:#141418}
-body.tpl-pinknikah{--ink:#f9d6e1;--ink2:#fdeef3;--ivory:#7d0d3d;--mute:#8a4a62;--line:#efb6c9;--accent:#b4124f;--on-accent:#ffffff;--bar:rgba(249,214,225,.94);--gold:#c79a4a;--fd:'Playfair Display',Georgia,serif;--bd:#dfe3d2;--bd2:#c3c9ae;--tr:#c79a4a;--gm:#f1ebe0;--gm2:#e3dccd;--gv:#1f5a43;background:linear-gradient(180deg,#f9d3df,#fbe6ec 50%,#f7ccdb)}
-body.lang-ur h2,body.lang-ur .rg-save,body.lang-ur .g-ev h4,body.lang-ur .m-ev h4,body.lang-ur .p-ev h4{font-family:'Noto Nastaliq Urdu',serif;line-height:2}
-.tpl-redgold .fam b,.tpl-maroon .fam b{font-family:'Pinyon Script',cursive;font-size:40px;font-weight:400}
-.tpl-redgold .foot .names,.tpl-maroon .foot .names{font-family:'Pinyon Script',cursive;font-size:44px;font-weight:400}
+body.tpl-pinknikah{--ink:#f9d6e1;--ink2:#fdeef3;--ivory:#7d0d3d;--mute:#8a4a62;--line:#efb6c9;--accent:#b4124f;--on-accent:#ffffff;--bar:rgba(249,214,225,.94);--gold:#c79a4a;--fd:'Cormorant Garamond',Georgia,serif;--bd:#dfe3d2;--bd2:#c3c9ae;--tr:#c79a4a;--gm:#f1ebe0;--gm2:#e3dccd;--gv:#1f5a43;background:linear-gradient(180deg,#f9d3df,#fbe6ec 50%,#f7ccdb)}
+body.lang-ur h2,body.lang-ur .rg-save,body.lang-ur .g-ev h4,body.lang-ur .m-ev h4,body.lang-ur .p-ev h4{font-family:'Jameel Noori Nastaleeq','Noto Nastaliq Urdu',serif;line-height:2}
+.tpl-redgold .fam b,.tpl-maroon .fam b{font-family:'Cormorant Garamond',Georgia,serif;font-size:40px;font-weight:400}
+.tpl-redgold .foot .names,.tpl-maroon .foot .names{font-family:'Cormorant Garamond',Georgia,serif;font-size:44px;font-weight:400}
 .tpl-redgold .cover{background:radial-gradient(circle at 50% 38%,#fffaf0,#f0e0bd)}
 .tpl-maroon .cover{background:radial-gradient(circle at 50% 30%,#e8e4e0,#cfcac5)}
 .tpl-pinknikah .cover{background:radial-gradient(circle at 50% 36%,#fde9f0,#f6c6d6)}
-.rg-cv{font-family:'Great Vibes',cursive;font-weight:400;font-size:clamp(38px,11vw,60px);line-height:1.1}
+.rg-cv{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:500;font-size:clamp(38px,11vw,60px);line-height:1.1}
 .rg-cv span{color:var(--accent)}
 .lanbtn{background:none;border:0;padding:0;width:84px;transform-origin:50% 0;animation:swing 3.4s ease-in-out infinite}
 .lanbtn svg{display:block;width:100%;height:auto;filter:drop-shadow(0 0 18px rgba(240,190,90,.55))}
@@ -262,16 +264,16 @@ body.lang-ur h2,body.lang-ur .rg-save,body.lang-ur .g-ev h4,body.lang-ur .m-ev h
 .rg-tr{top:30px;right:-14px;width:min(46vw,200px)}
 .rg-bl{bottom:30px;left:-14px;width:min(46vw,200px);transform:scaleX(-1)}
 .rg-text{position:relative;z-index:3;display:flex;flex-direction:column;align-items:center;gap:6px;padding:0 24px}
-.rg-save{font-family:'Great Vibes','Pinyon Script',cursive;font-size:clamp(46px,14vw,78px);line-height:1.05;color:#231810}
+.rg-save{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:500;font-size:clamp(46px,14vw,78px);line-height:1.05;color:#231810}
 .rg-cap{letter-spacing:.14em;font-weight:700;text-transform:uppercase;font-size:13px;margin-top:26px}
-.rg-names{font-family:Manrope,sans-serif;font-weight:800;text-transform:uppercase;font-size:clamp(22px,7vw,34px);line-height:1.25;letter-spacing:.02em;text-align:center}
+.rg-names{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;text-transform:uppercase;font-size:clamp(26px,8vw,40px);line-height:1.2;letter-spacing:.05em;text-align:center}
 .rg-amp{display:block;color:var(--accent)}
 .rg-date{margin-top:14px;border-block:1px solid var(--gold);padding:6px 14px;font-weight:700;letter-spacing:.08em;font-size:15px;text-transform:uppercase}
 .rg-ven{font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:14px;margin-top:8px}
 .rg-special{margin-top:46px;letter-spacing:.5em;font-size:13px;text-transform:uppercase;font-weight:600}
 .g-evs{display:grid;gap:20px}
 .g-ev{background:rgba(255,250,236,.9);border:1.5px solid var(--gold);padding:26px 18px;box-shadow:0 0 0 4px rgba(201,162,74,.15)}
-.g-ev h4{font-family:'Great Vibes',cursive;font-size:44px;color:var(--accent);font-weight:400;line-height:1.2}
+.g-ev h4{font-family:'Cormorant Garamond',Georgia,serif;font-size:44px;color:var(--accent);font-weight:400;line-height:1.2}
 /* maroon arch */
 .mr-hero{background:linear-gradient(180deg,#dfdbd7,#d6d1cc);padding:120px 0 140px}
 .mr-box{position:relative;width:min(88%,430px);margin:0 auto}
@@ -292,19 +294,19 @@ body.lang-ur .mr-card .script{font-size:30px;line-height:1.9}
 .mr-couple{position:absolute;right:-18px;bottom:-110px;width:min(44vw,210px);height:auto;z-index:4}
 .m-evs{display:grid;gap:20px}
 .m-ev{background:#f2ede7;border:1.5px solid #cdbfb2;border-radius:min(40vw,150px) min(40vw,150px) 14px 14px;padding:54px 18px 24px;box-shadow:0 8px 22px rgba(60,40,40,.12)}
-.m-ev h4{font-family:'Pinyon Script',cursive;font-size:40px;color:var(--accent);font-weight:400;line-height:1.2}
+.m-ev h4{font-family:'Cormorant Garamond',Georgia,serif;font-size:40px;color:var(--accent);font-weight:400;line-height:1.2}
 /* pink nikah */
 .pk-hero{background:radial-gradient(circle at 20% 15%,rgba(255,255,255,.6),transparent 40%),radial-gradient(circle at 85% 70%,rgba(236,120,160,.28),transparent 45%),linear-gradient(180deg,#f9d1de,#fbe3ea 60%,#f6c6d6);padding:80px 22px 270px;justify-content:flex-start}
 .pk-t{position:relative;z-index:3;display:flex;flex-direction:column;align-items:center;width:100%}
 .pk-bism{font-size:32px;color:#6b3a28;line-height:2;margin-bottom:4px}
 .pk-in{color:var(--accent);font-size:15.5px;line-height:1.6;margin:4px 0 14px}
 .pk-fl{display:block;width:min(280px,74%);height:14px;margin:8px auto;color:var(--accent)}
-.pk-name{font-family:'Playfair Display',Georgia,serif;font-weight:500;font-size:clamp(30px,9vw,40px);color:var(--accent);line-height:1.25}
-.pk-amp{font-family:'Playfair Display',serif;font-style:italic;color:var(--accent);font-size:20px;margin:2px 0}
+.pk-name{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(30px,9vw,40px);color:var(--accent);line-height:1.25}
+.pk-amp{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;color:var(--accent);font-size:20px;margin:2px 0}
 .pk-mon{letter-spacing:.22em;font-size:14px;text-transform:uppercase;margin-top:18px;font-weight:600}
 .pk-row{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:center;width:min(340px,100%)}
 .pk-row .side{border-block:1px solid var(--accent);padding:4px 2px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
-.pk-row .big{font-family:'Playfair Display',serif;font-size:56px;color:var(--accent);line-height:1.1;font-weight:600}
+.pk-row .big{font-family:'Cormorant Garamond',Georgia,serif;font-size:56px;color:var(--accent);line-height:1.1;font-weight:600}
 .pk-at{margin-top:8px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:13px}
 .pk-ve{margin-top:8px;font-size:14px;color:var(--mute);max-width:300px}
 .pk-gl{position:absolute;height:auto;width:min(34vw,150px);opacity:.9;z-index:2}
@@ -316,7 +318,7 @@ body.lang-ur .mr-card .script{font-size:30px;line-height:1.9}
 .pk-couple{position:absolute;bottom:0;left:26%;width:min(30vw,130px);height:auto;z-index:3}
 .p-evs{display:grid;gap:20px}
 .p-ev{background:rgba(255,255,255,.55);border:1px solid var(--line);border-radius:18px;padding:26px 18px;box-shadow:0 8px 20px rgba(180,18,79,.1)}
-.p-ev h4{font-family:'Playfair Display',serif;font-size:26px;color:var(--accent);font-weight:600}
+.p-ev h4{font-family:'Cormorant Garamond',Georgia,serif;font-size:26px;color:var(--accent);font-weight:600}
 .tpl-redgold .count div{background:var(--ink2);border:1.5px solid var(--gold)}
 .tpl-maroon .count div{background:var(--ink2);border-radius:40px 40px 10px 10px}
 .tpl-pinknikah .count div{background:rgba(255,255,255,.55);border-radius:18px}
@@ -339,6 +341,35 @@ body.lang-ur .mr-card .script{font-size:30px;line-height:1.9}
 .tpl-maroon .lf-g li{border-radius:30px 30px 10px 10px}
 .tpl-pinknikah .lf-g li{background:rgba(255,255,255,.6);border-radius:16px}
 @media(max-width:340px){.lf-g{grid-template-columns:1fr}}
+/* ---------- Designs 8: Velvet Gold ---------- */
+body.tpl-velvet{--ink:#4a0a17;--ink2:#661024;--ivory:#f5e9d2;--mute:#dcc6ad;--line:#8f6a3d;--accent:#e0bf73;--on-accent:#3b0711;--bar:rgba(74,10,23,.94);--gold:#c9a24a;--fd:'Cormorant Garamond',Georgia,serif;background:var(--vel),radial-gradient(circle at 50% 0,#7a1629,#3f0813 75%)}
+.tpl-velvet .cover{background:var(--vel),radial-gradient(circle at 50% 40%,#7a1629,#3a0712)}
+.vl-cv{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-size:clamp(34px,10vw,54px);line-height:1.2;color:#f5e9d2}
+.vl-cv .amp{color:var(--accent);font-style:italic}
+.vl-hero{background:var(--vel),radial-gradient(ellipse at 50% 35%,rgba(160,34,56,.5),transparent 70%);padding:56px 0 70px;justify-content:center}
+.vl-title{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:500;font-size:clamp(44px,13vw,74px);line-height:1.25;background:linear-gradient(180deg,#fbe8b0,#d9b45e 55%,#9a742a);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:76px;padding:0 10px}
+body.lang-ur .vl-title{font-size:clamp(34px,9vw,52px);line-height:2}
+.vl-panel{position:relative;width:min(86%,680px);margin:0 auto;background:radial-gradient(ellipse at 50% 40%,#fbf5e8,#efe3c8);border:1.5px solid #cdb27a;outline:1px solid rgba(201,162,74,.65);outline-offset:-9px;padding:104px 30px 96px;text-align:center;color:#5a0f1c;box-shadow:0 22px 50px rgba(0,0,0,.5)}
+.vl-c{position:absolute;width:min(48vw,240px);height:auto;pointer-events:none;z-index:3;overflow:visible}
+.vl-c1{top:-50px;left:-56px}.vl-c2{top:-50px;right:-56px;transform:scaleX(-1)}.vl-c3{bottom:-50px;left:-56px;transform:scaleY(-1)}.vl-c4{bottom:-50px;right:-56px;transform:scale(-1,-1)}
+.vl-in{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(16px,4.4vw,20px);color:#6b1626;margin:0 0 26px;line-height:1.5}
+.vl-name{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-size:clamp(32px,9vw,52px);line-height:1.15;color:#5a0f1c}
+.vl-par{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(19px,5.4vw,30px);line-height:1.3;margin-top:6px;color:#5a0f1c}
+.vl-amp{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:28px;color:#9a742a;margin:10px 0}
+.vl-plc{margin-top:30px;font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(18px,4.8vw,26px);color:#5a0f1c}
+.vl-dt{margin-top:20px;font-size:14px;letter-spacing:.05em;color:#7a5a2a}
+body.lang-ur .vl-name,body.lang-ur .vl-par,body.lang-ur .vl-plc,body.lang-ur .vl-in{font-family:'Jameel Noori Nastaleeq','Noto Nastaliq Urdu',serif;line-height:2}
+body.lang-ur .vl-name{font-size:clamp(30px,8vw,46px)}
+.vl-hero a.go{color:#f5e9d2;margin-top:48px}
+.v-evs{display:grid;gap:20px}
+.v-ev{background:var(--ink2);border:1.5px solid var(--gold);padding:28px 18px;box-shadow:inset 0 0 0 5px rgba(201,162,74,.14)}
+.v-ev h4{font-family:'Cormorant Garamond',Georgia,serif;font-size:44px;color:var(--accent);font-weight:400;line-height:1.2}
+body.lang-ur .v-ev h4{font-family:'Jameel Noori Nastaleeq','Noto Nastaliq Urdu',serif;font-size:28px;line-height:2}
+.tpl-velvet .fam b,.tpl-velvet .foot .names{font-family:'Cormorant Garamond',Georgia,serif;font-size:42px;font-weight:400;color:var(--accent)}
+.tpl-velvet .count div{background:var(--ink2);border:1.5px solid var(--gold);border-radius:12px}
+.tpl-velvet .lf-g li{background:var(--ink2);border-color:var(--gold);border-radius:12px}
+
+.foot a.mk{color:var(--accent);text-decoration:none;font-weight:700}
 /* ---------- admin ---------- */
 .panel{background:var(--ink2);border:1px solid var(--line);border-radius:14px;padding:20px;margin:16px 0}
 .adm{max-width:900px;margin:0 auto;padding:20px}
@@ -386,8 +417,8 @@ const firebaseConfig = {
 /* Shown on locked (unpaid) invitations */
 /* "hash" = works on any free static host (GitHub Pages, Netlify, Cloudflare Pages): link looks like site/#ali-weds-sara
    "path" = only for Firebase Hosting with rewrites: link looks like site/ali-weds-sara */
-const LINK_MODE = "hash";
-const BRAND = {name:"Moon Academy of Information Technology", nameUr:"مون اکیڈمی آف انفارمیشن ٹیکنالوجی", phone:"03226327876", wa:"923226327876"};
+const LINK_MODE = (location.protocol === 'file:' || /github\.io$/.test(location.hostname)) ? 'hash' : 'path';   // GitHub Pages / local file: site/#name   Netlify, Firebase, own domain: site/name
+const BRAND = {name:"Moon Developers", nameUr:"مون ڈیولپرز", phone:"03226327876", wa:"923226327876"};
 /* ================================================================================ */
 
 /* DEMO MODE: while the config above still says PASTE_..., everything runs offline in this browser (localStorage). */
@@ -416,7 +447,7 @@ if(!DEMO){
   onAuthStateChanged=(_a,cb)=>{L.push(cb);cb(localStorage.getItem('moon_demo_user')?{email:localStorage.getItem('moon_demo_user')}:null)};
   signInWithEmailAndPassword=async(_a,e)=>{localStorage.setItem('moon_demo_user',e);L.forEach(f=>f({email:e}))};
   signOut=async()=>{localStorage.removeItem('moon_demo_user');L.forEach(f=>f(null))};
-  const st=EMB?{seeded5:1,seededI:1,seededJ:1,inv:{}}:load();
+  const st=EMB?{seeded5:1,seededI:1,seededJ:1,seededK:1,inv:{}}:load();
   if(!st.seeded5){
     const now={seconds:Math.floor(Date.now()/1000)};
     const mk=o=>({music:'soft1',musicUrl:'',paid:true,amount:'3000',customer:'Sample customer',phone:'03001234567',lang:'en',accent:'',introEn:'',introUr:'',rsvpBy:'1 February',rsvpNames:['Mr. Bilal Khan','Mr and Mrs Usman Malik'],know:['Parking available'],updated:now,...o});
@@ -447,6 +478,11 @@ if(!DEMO){
               {titleEn:'Walima',titleUr:'ولیمہ',date:'2026-12-27',venue:'Islampur',venueUr:'اسلام پور'}]};
     Object.keys(st.inv).filter(k => k.startsWith('gulfraz-')).forEach(k => Object.assign(st.inv[k], GU));
     st.seededJ = true; save(st);
+  }
+  if(!st.seededK){
+    Object.keys(st.inv).filter(k => k.startsWith('gulfraz-')).forEach(k => Object.assign(st.inv[k], {groomParentsEn:'S/O Haji Naimat Ali', groomParentsUr:'ولد حاجی نعمت علی', placeEn:'Islampur Multan', placeUr:'اسلام پور ملتان'}));
+    if(st.inv['gulfraz-card']) st.inv['gulfraz-velvet'] = {...st.inv['gulfraz-card'], tpl:'velvet', music:'soft1'};
+    st.seededK = true; save(st);
   }
   const b=document.createElement('div');
   b.textContent='DEMO · saved only in this browser';
@@ -545,6 +581,36 @@ ${branchSVG('br1',300,150,7)}${branchSVG('br2',260,140,21)}${branchSVG('br3',240
 <symbol id="domeicon" viewBox="0 0 120 130"><path d="M18 118V74C18 44 44 36 60 14C76 36 102 44 102 74V118Z" fill="url(#pkg)" stroke="#b4124f" stroke-width="2"/><path d="M60 4V14" stroke="#b4124f" stroke-width="2"/><circle cx="60" cy="7" r="3" fill="#c79a4a"/><path d="M44 118V92a16 16 0 0 1 32 0V118Z" fill="#fbe3ea" stroke="#b4124f"/></symbol>
 ${skylineSym()}`;
 
+/* ---------- art for the Velvet Gold card ---------- */
+const roseSym = (id, a, b, c, d, st) => `<symbol id="${id}" viewBox="-30 -30 60 60"><circle r="27" fill="${a}" stroke="${st}" stroke-width="1.3"/><path d="M-20 -4C-18 -20 -2 -26 12 -20C24 -14 26 2 20 12C12 24 -6 26 -16 18" fill="${b}" stroke="${st}" stroke-width="1.2"/><path d="M-12 2C-12 -10 -2 -16 8 -12C16 -8 17 2 12 8C6 15 -6 15 -11 9" fill="${c}" stroke="${st}" stroke-width="1.1"/><path d="M-6 0C-6 -6 0 -9 5 -6C9 -3 8 3 4 5C0 8 -5 6 -6 1" fill="${d}" stroke="${st}"/><circle r="26" fill="none" stroke="#fff" stroke-opacity=".45" stroke-dasharray="1.6 2.4"/></symbol>`;
+function gBranch(id, w, h, seedN){
+  let seed = seedN; const rn = () => (seed = (seed*9301 + 49297) % 233280) / 233280;
+  const cols = ['#d9b45e','#c9a24a','#e8cc84','#b8903a'];
+  const p0 = [6, h*.5], p1 = [w*.5, h*(rn() > .5 ? .05 : .95)], p2 = [w-6, h*.5]; let g = '';
+  for(let i = 0; i < 16; i++){
+    const t = i/15, u = 1 - t;
+    const x = u*u*p0[0] + 2*u*t*p1[0] + t*t*p2[0], y = u*u*p0[1] + 2*u*t*p1[1] + t*t*p2[1];
+    const dx = 2*u*(p1[0]-p0[0]) + 2*t*(p2[0]-p1[0]), dy = 2*u*(p1[1]-p0[1]) + 2*t*(p2[1]-p1[1]);
+    const ang = Math.atan2(dy, dx) * 180 / Math.PI;
+    [-1, 1].forEach(s => { const a = ang + s*(40 + rn()*25), sc = .55 + rn()*.5;
+      g += `<path d="M0 0C5 -8 16 -9 24 0C16 9 5 8 0 0Z" fill="${cols[Math.floor(rn()*cols.length)]}" stroke="#9a7424" stroke-width=".4" transform="translate(${fx(x)} ${fx(y)}) rotate(${Math.round(a)}) scale(${fx(sc)})"/>`; });
+    if(i % 3 === 1) g += `<circle cx="${fx(x)}" cy="${fx(y + (rn()-.5)*10)}" r="1.8" fill="#f1d894"/>`;
+  }
+  return `<symbol id="${id}" viewBox="0 0 ${w} ${h}"><path d="M${p0[0]} ${p0[1]}Q${fx(p1[0])} ${fx(p1[1])} ${p2[0]} ${p2[1]}" fill="none" stroke="#c9a24a" stroke-width="1.6"/>${g}</symbol>`;
+}
+const VEL_DEFS = `
+<linearGradient id="cr" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#e3c78f"/><stop offset="1" stop-color="#fff7e6"/></linearGradient>
+${roseSym('grose','#f4b862','#ea9a38','#d6791f','#b85f12','#9a5a14')}
+<symbol id="cflower" viewBox="-50 -50 100 100"><g fill="url(#cr)" stroke="#c9a24a" stroke-width=".8">${useRot('pt',16,22.5)}</g><g transform="rotate(11) scale(.8)" fill="url(#cr)" stroke="#c9a24a" stroke-width=".9">${useRot('pt',14,25.7)}</g><g transform="rotate(5) scale(.58)" fill="#f6e2b8" stroke="#c9a24a" stroke-width="1">${useRot('pt',12,30)}</g><g transform="scale(.36)" fill="#e9b25a" stroke="#b07a22" stroke-width="1.2">${useRot('pt',10,36)}</g><circle r="6.5" fill="url(#gldr)" stroke="#9a7424" stroke-width=".6"/>${Array.from({length:10}, (_, i) => `<circle cx="${fx(9.5*Math.cos(i*Math.PI/5))}" cy="${fx(9.5*Math.sin(i*Math.PI/5))}" r="1.1" fill="#fff3c9"/>`).join('')}</symbol>
+${gBranch('gbr1',260,110,5)}${gBranch('gbr2',110,260,9)}
+<symbol id="vcorner" viewBox="0 0 300 300">
+<use href="#gbr1" x="40" y="-4" width="260" height="110"/><use href="#gbr2" x="-4" y="40" width="110" height="260"/>
+${lf('lgold',120,60,100,-16)}${lf('lgold',110,120,92,30)}${lf('lgold',60,120,92,66)}${lf('lgold',150,30,84,-38)}${lf('lgold',30,150,84,100)}${lf('lgold',130,150,80,48)}${lf('lgold',165,95,80,10)}
+<use href="#cflower" x="22" y="22" width="136" height="136"/><use href="#cflower" x="170" y="18" width="76" height="76"/><use href="#cflower" x="18" y="170" width="76" height="76"/>
+<use href="#grose" x="118" y="6" width="38" height="38"/><use href="#grose" x="6" y="118" width="38" height="38"/><use href="#grose" x="130" y="128" width="46" height="46"/><use href="#grose" x="214" y="104" width="30" height="30"/><use href="#grose" x="104" y="214" width="30" height="30"/>
+<circle cx="260" cy="60" r="3" fill="#f1d894"/><circle cx="60" cy="260" r="3" fill="#f1d894"/><circle cx="192" cy="160" r="2.5" fill="#f1d894"/><circle cx="160" cy="192" r="2.5" fill="#f1d894"/>
+</symbol>`;
+
 /* shared SVG art (flowers, moon) */
 const DEFS = `<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
 <symbol id="bloom" viewBox="-16 -16 32 32"><g fill="currentColor"><ellipse cx="0" cy="-8" rx="5.5" ry="9" opacity=".92"/><ellipse cx="0" cy="-8" rx="5.5" ry="9" opacity=".92" transform="rotate(72)"/><ellipse cx="0" cy="-8" rx="5.5" ry="9" opacity=".92" transform="rotate(144)"/><ellipse cx="0" cy="-8" rx="5.5" ry="9" opacity=".92" transform="rotate(216)"/><ellipse cx="0" cy="-8" rx="5.5" ry="9" opacity=".92" transform="rotate(288)"/></g><circle r="4" fill="#f4dca4"/></symbol>
@@ -566,7 +632,7 @@ const DEFS = `<svg width="0" height="0" style="position:absolute" aria-hidden="t
 <use href="#rose" x="14" y="10" width="104" height="104"/><use href="#rose" x="176" y="44" width="62" height="62"/><use href="#rose" x="44" y="176" width="62" height="62"/>
 <use href="#bud" x="262" y="70" width="22" height="22"/><use href="#bud" x="70" y="262" width="22" height="22"/><use href="#bud" x="140" y="60" width="18" height="18"/>
 </symbol>
-${ART_DEFS}</defs></svg>`;
+${ART_DEFS}${VEL_DEFS}</defs></svg>`;
 
 /* ============================ BACKGROUND MUSIC (built-in soft tunes, no files needed) ============================ */
 const MUSIC = {
@@ -768,6 +834,22 @@ TPL.pinknikah = {
   events: list => evList('p', list)
 };
 
+/* ---- Design 8: Velvet Gold Card (from the maroon "Wedding Card" reference) ---- */
+const VEL_SVG = `<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='v'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' seed='9' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .1  0 0 0 0 0  0 0 0 0 .02  0 0 0 .22 0'/></filter><rect width='220' height='220' filter='url(#v)'/></svg>`;
+TPL.velvet = {
+  name: 'Velvet Gold Card', desc: 'Maroon velvet, gold flowers, cream panel', sw: ['#4a0a17', '#d9b45e'],
+  cover: d => `<h1 class="vl-cv">${NAMES(d)}</h1>
+    <button class="rosebtn" id="open" aria-label="Open invitation">${svgUse('', 'cflower', '-50 -50 100 100', 100, 100)}</button>
+    <div class="hint">${T('Tap the flower to open','کھولنے کے لیے پھول پر ٹیپ کریں')}</div>`,
+  hero: (d, e0) => `<header class="hero vl-hero"><div class="vl-title">${T('Wedding Card','شادی کارڈ')}</div>
+    <div class="vl-panel">${svgUse('vl-c vl-c1','vcorner','0 0 300 300',300,300)}${svgUse('vl-c vl-c2','vcorner','0 0 300 300',300,300)}${svgUse('vl-c vl-c3','vcorner','0 0 300 300',300,300)}${svgUse('vl-c vl-c4','vcorner','0 0 300 300',300,300)}
+      <div class="vl-in">${T('You are invited on the wedding ceremony of','آپ کو شادی کی تقریب میں شرکت کی دعوت دی جاتی ہے')}</div>
+      <div class="vl-name">${G(d)}</div>${d.groomParentsEn || d.groomParentsUr ? `<div class="vl-par">${T(d.groomParentsEn || '', d.groomParentsUr)}</div>` : ''}
+      ${hasB(d) ? `<div class="vl-amp">&amp;</div><div class="vl-name">${B(d)}</div>${d.brideParentsEn || d.brideParentsUr ? `<div class="vl-par">${T(d.brideParentsEn || '', d.brideParentsUr)}</div>` : ''}` : ''}
+      ${d.placeEn || d.placeUr ? `<div class="vl-plc">${T(d.placeEn || '', d.placeUr)}</div>` : ''}${e0 ? `<div class="vl-dt">${dFull(e0)}</div>` : ''}</div>${goLink}</header>`,
+  events: list => evList('v', list)
+};
+
 /* ============================ PUBLIC INVITATION ============================ */
 async function showInvite(slug){
   $app.innerHTML = `<div class="hero"><p class="hint">Loading…</p></div>`;
@@ -781,6 +863,7 @@ async function showInvite(slug){
   const tid = TPL[d.tpl] ? d.tpl : 'royal', t = TPL[tid];
   document.title = `${pairTxt(d)} · Wedding Invitation`;
   document.body.className = `tpl-${tid} lang-${d.lang === 'ur' ? 'ur' : 'en'}`;
+  if(tid === 'velvet') document.body.style.setProperty('--vel', dataUri(VEL_SVG));
   if(tid === 'card'){ document.body.style.setProperty('--vine', dataUri(VINE_SVG)); document.body.style.setProperty('--linen', dataUri(LINEN_SVG)); }
   if(/^#[0-9a-f]{6}$/i.test(d.accent || '')){ document.body.style.setProperty('--accent', d.accent); document.body.style.setProperty('--on-accent', onAcc(d.accent)); }
   const events = (d.events || []).filter(e => e.date).sort((a,b) => evDate(a) - evDate(b));
@@ -800,7 +883,7 @@ async function showInvite(slug){
 
   <section class="blk center" id="details"><div class="wrap">
     <div class="fam">
-      <b class="serif">${G(d)}</b><span>${T(d.groomParentsEn||'',d.groomParentsUr||d.groomParentsEn||'')}</span>
+      <b class="serif">${G(d)}</b><span>${T(d.groomParentsEn||'',d.groomParentsUr||d.groomParentsEn||'')}</span>${d.placeEn ? `<span>${T(d.placeEn,d.placeUr)}</span>` : ''}
       ${hasB(d) ? `<b class="serif" style="color:var(--accent)">&amp;</b>
       <b class="serif">${B(d)}</b><span>${T(d.brideParentsEn||'',d.brideParentsUr||d.brideParentsEn||'')}</span>` : ''}
     </div>
@@ -839,7 +922,7 @@ async function showInvite(slug){
     <p>${T('We cannot wait to celebrate with you.','ہم آپ کے ساتھ خوشیاں منانے کے منتظر ہیں۔')}</p>
     ${d.hashtag?`<p>#${esc(d.hashtag)}</p>`:''}
     <div class="evact"><a class="btn sm" id="wa" href="#">${T('Share on WhatsApp','واٹس ایپ پر شیئر کریں')}</a><button class="btn sm ghost" id="copy">${T('Copy link','لنک کاپی کریں')}</button></div>
-    <p class="small" style="margin-top:30px">${T('Made by ' + BRAND.name, 'تیار کردہ: ' + BRAND.nameUr)}</p>
+    <p class="small" style="margin-top:30px">${T('Made by ' + BRAND.name, 'تیار کردہ: ' + BRAND.nameUr)}<br><a class="mk" href="tel:+${BRAND.wa}">${BRAND.phone.replace(/^(\d{4})(\d+)$/, '$1 $2')}</a> &nbsp;|&nbsp; <a class="mk" href="https://wa.me/${BRAND.wa}">WhatsApp</a></p>
   </div></footer></div>
 
   <nav class="tabbar"><a href="#events" data-go="events">${T('Events','تقریبات')}</a><a href="#rsvp" data-go="rsvp">${T('Reply','جواب')}</a><a href="#" id="shareTab">${T('Share','شیئر')}</a></nav>`;
@@ -847,7 +930,7 @@ async function showInvite(slug){
   // falling petals (rose petals / golden dust)
   const fall = document.getElementById('fall');
   if(fall){
-    const pal = {royal:['#e9a3ac','#d9788a','#c24d66','#f3c9cd'], blush:['#e08a9c','#b4536a','#eeb0bc','#f7d3d9'], noir:['#e6c79c','#f3dfc0','#ffffff'], card:['#f3b33d','#e8923a','#f6c95a','#ee9f3f','#f7d070'], redgold:['#b3121f','#d73a2f','#d9a441','#f0d27c'], maroon:['#7a2e3a','#9c3345','#c9a24a','#b57a3d'], pinknikah:['#f4a3bd','#e86c97','#fbd0de','#f8bcd0']}[tid];
+    const pal = {royal:['#e9a3ac','#d9788a','#c24d66','#f3c9cd'], blush:['#e08a9c','#b4536a','#eeb0bc','#f7d3d9'], noir:['#e6c79c','#f3dfc0','#ffffff'], card:['#f3b33d','#e8923a','#f6c95a','#ee9f3f','#f7d070'], redgold:['#b3121f','#d73a2f','#d9a441','#f0d27c'], maroon:['#7a2e3a','#9c3345','#c9a24a','#b57a3d'], pinknikah:['#f4a3bd','#e86c97','#fbd0de','#f8bcd0'], velvet:['#e9cf9a','#c9a24a','#f6e3a6','#fff3dc']}[tid];
     const n = tid === 'noir' ? 34 : 24, r = (a,b) => a + Math.random()*(b-a);
     if(tid === 'noir') fall.classList.add('dust');
     if(tid === 'card') fall.classList.add('mg');
@@ -920,14 +1003,99 @@ function landing(){
     <div class="n-names"><h2>Moon<br>Invitations</h2></div>
     <p class="hint" style="position:relative;margin:18px 0">Digital wedding invitations by ${esc(BRAND.name)}</p>
     <a class="btn" style="position:relative" href="https://wa.me/${BRAND.wa}">Order yours on WhatsApp</a>
-    ${DEMO?`<p style="position:relative;margin-top:30px;display:flex;gap:8px;flex-wrap:wrap"><a class="btn sm ghost" href="#ahmed-weds-ayesha">Sample: Royal Emerald</a><a class="btn sm ghost" href="#bilal-weds-hira">Sample: Blush Garden</a><a class="btn sm" href="#gulfraz-card">Gulfraz: Embroidered Card</a><a class="btn sm" href="#gulfraz-redgold">Gulfraz: Red &amp; Gold</a><a class="btn sm" href="#gulfraz-maroon">Gulfraz: Maroon Arch</a><a class="btn sm" href="#gulfraz-pinknikah">Gulfraz: Pink Nikah</a><a class="btn sm ghost" href="#sami-weds-noor">Sample: Midnight Moon</a><a class="btn sm ghost" href="#farah-weds-imran">Sample: Embroidered Card</a><a class="btn sm ghost" href="#admin">Admin panel</a></p><p class="small" style="position:relative">Demo: type any email and password to enter admin.</p>`:''}</div>`;
+    ${DEMO?`<p style="position:relative;margin-top:30px;display:flex;gap:8px;flex-wrap:wrap"><a class="btn sm ghost" href="#ahmed-weds-ayesha">Sample: Royal Emerald</a><a class="btn sm ghost" href="#bilal-weds-hira">Sample: Blush Garden</a><a class="btn sm" href="#gulfraz-card">Gulfraz: Embroidered Card</a><a class="btn sm" href="#gulfraz-redgold">Gulfraz: Red &amp; Gold</a><a class="btn sm" href="#gulfraz-maroon">Gulfraz: Maroon Arch</a><a class="btn sm" href="#gulfraz-pinknikah">Gulfraz: Pink Nikah</a><a class="btn sm" href="#gulfraz-velvet">Gulfraz: Velvet Gold</a><a class="btn sm ghost" href="#sami-weds-noor">Sample: Midnight Moon</a><a class="btn sm ghost" href="#farah-weds-imran">Sample: Embroidered Card</a><a class="btn sm ghost" href="#admin">Admin panel</a></p><p class="small" style="position:relative">Demo: type any email and password to enter admin.</p>`:''}</div>`;
 }
+
+/* ============================ AUTO URDU (English -> Urdu) ============================
+   Built-in dictionary for common names, places and words + a phonetic fallback.
+   When online it also asks Google's transliteration for unknown words (best effort).     */
+const UR = (() => {
+  const RAW = {
+    // titles and family names
+    'mr':'مسٹر','mrs':'مسز','miss ms':'مس','dr doctor':'ڈاکٹر','engr engineer':'انجینئر','haji hajji':'حاجی','hafiz':'حافظ','qari':'قاری','maulana molana':'مولانا','maulvi':'مولوی','sheikh shaikh':'شیخ','chaudhry chaudhary choudhry chowdhry ch':'چوہدری','malik':'ملک','rao':'راؤ','rana':'رانا','khan':'خان','mian':'میاں','sardar':'سردار','syed sayyed sayed':'سید','mirza':'مرزا','baig beg':'بیگ','butt':'بٹ','jatt jat':'جٹ','gill':'گل','cheema':'چیمہ','warraich':'وڑائچ','bhatti':'بھٹی','sandhu':'سندھو','tarar':'تارڑ','ansari':'انصاری','siddiqui siddique':'صدیقی','qureshi quraishi':'قریشی','farooqi':'فاروقی','usmani':'عثمانی','alvi':'علوی','hashmi':'ہاشمی','abbasi':'عباسی','bukhari':'بخاری','gillani gilani':'گیلانی','kharal':'کھرل','joiya':'جوئیہ','langah':'لنگاہ','dogar':'ڈوگر','arain':'آرائیں','lodhi':'لودھی','niazi':'نیازی','baloch':'بلوچ','mughal':'مغل','pathan':'پٹھان','memon':'میمن','rajput':'راجپوت','gujjar':'گجر','awan':'اعوان','late':'مرحوم','son':'بیٹا','daughter':'بیٹی','brother':'بھائی','sister':'بہن','father':'والد','mother':'والدہ','uncle':'چچا','aunt':'خالہ',
+    // male names
+    'muhammad mohammad mohammed muhammed mohd md':'محمد','ahmad ahmed':'احمد','ali':'علی','hassan hasan':'حسن','hussain husain hussein':'حسین','usman uthman osman':'عثمان','umar omar':'عمر','bilal':'بلال','imran':'عمران','irfan':'عرفان','farhan':'فرحان','kamran':'کامران','adnan':'عدنان','faisal faysal':'فیصل','fahad fahd':'فہد','hamza':'حمزہ','hashim':'ہاشم','haroon harun':'ہارون','ibrahim':'ابراہیم','ismail':'اسماعیل','idrees idris':'ادریس','jawad':'جواد','junaid junaid':'جنید','kashif':'کاشف','khalid':'خالد','luqman':'لقمان','mudassar mudasir':'مدثر','mubashir mubasher':'مبشر','naveed':'نوید','nadeem':'ندیم','naeem':'نعیم','naimat nematullah':'نعمت','nasir naseer':'ناصر','rashid':'رشید','rizwan':'رضوان','sajid':'ساجد','saleem salim':'سلیم','salman':'سلمان','sarfraz sarfaraz':'سرفراز','shahid':'شاہد','shahzad shehzad':'شہزاد','shakeel':'شکیل','shoaib shuaib':'شعیب','tariq tarik':'طارق','waqas':'وقاص','waseem wasim':'وسیم','yasir yasser':'یاسر','younas yunus':'یونس','yousaf yusuf':'یوسف','zahid':'زاہد','zubair':'زبیر','zeeshan zishan':'ذیشان','asif':'آصف','asad':'اسد','akram':'اکرم','afzaal':'افضال','afzal':'افضل','amir aamir':'عامر','anwar':'انور','arif':'عارف','arshad':'ارشد','aslam':'اسلم','ayub ayyub':'ایوب','azhar':'اظہر','babar':'بابر','basit':'باسط','fahim':'فہیم','farooq':'فاروق','ghulam':'غلام','gulfraz':'گلفراز','habib':'حبیب','hafeez':'حفیظ','haider hyder':'حیدر','hanif':'حنیف','iqbal':'اقبال','jamil':'جمیل','javed javaid jawed':'جاوید','kareem karim':'کریم','liaqat':'لیاقت','majid':'ماجد','manzoor':'منظور','masood':'مسعود','mazhar':'مظہر','mubarak':'مبارک','mukhtar':'مختار','munir':'منیر','mushtaq':'مشتاق','nawaz':'نواز','noman nouman numan':'نعمان','qamar':'قمر','qasim kasim':'قاسم','rafiq':'رفیق','rehan rayyan':'ریحان','saeed said':'سعید','saif':'سیف','sohail suhail':'سہیل','sultan':'سلطان','talha':'طلحہ','touseef tauseef':'توصیف','waheed':'وحید','zafar':'ظفر','zain zayn':'زین','zaheer zahir':'ظہیر','ahsan':'احسن','ammar':'عمار','anas':'انس','danish':'دانش','daniyal':'دانیال','ehsan':'احسان','fawad':'فواد','haris harris':'حارث','huzaifa':'حذیفہ','mansoor mansur':'منصور','mohsin':'محسن','owais uwais':'اویس','qadeer':'قدیر','rauf':'رؤف','sabir':'صابر','sadiq':'صادق','shafiq':'شفیق','sheraz':'شیراز','tahir':'طاہر','talal':'طلال','tanveer':'تنویر','umair':'عمیر','usama osama':'اسامہ','zohaib':'زوہیب','zulfiqar zulfikar':'ذوالفقار','abdullah':'عبداللہ','abdul':'عبد','abdur':'عبد','rehman rahman':'رحمان','raheem rahim':'رحیم','razzaq':'رزاق','ghaffar':'غفار','ghafoor':'غفور','sattar':'ستار','wahab':'وہاب','basharat':'بشارت','ijaz':'اعجاز','ikram':'اکرام','inayat':'عنایت','khurram':'خرم','shahbaz':'شہباز','shahrukh':'شاہ رخ','shan':'شان','sikandar':'سکندر','tahir':'طاہر','zulqarnain':'ذوالقرنین',
+    // female names
+    'ayesha aisha':'عائشہ','fatima fatimah':'فاطمہ','khadija khadijah':'خدیجہ','maryam mariam':'مریم','zainab':'زینب','hira':'ہیرا','noor nur':'نور','sana':'ثناء','sara sarah':'سارہ','sidra':'سدرہ','saima':'صائمہ','samina':'ثمینہ','shazia':'شازیہ','farah':'فرح','nadia':'نادیہ','naila':'نائلہ','rabia':'رابعہ','rukhsana':'رخسانہ','sobia sofia':'صوبیہ','sumaira':'سمیرا','uzma':'عظمیٰ','asma':'اسماء','amna aamna':'آمنہ','bushra':'بشریٰ','iqra':'اقرا','laiba':'لائبہ','mehwish':'مہوش','mehreen':'مہرین','nimra':'نمرہ','rida':'ردا','rimsha':'رمشا','shumaila':'شمائلہ','tahira':'طاہرہ','tayyaba':'طیبہ','zara':'زارا','aliya alia':'عالیہ','anam':'انعم','areeba':'اریبہ','hafsa':'حفصہ','humaira':'حمیرا','kainat':'کائنات','kiran':'کرن','komal':'کومل','madiha':'مدیحہ','memona':'میمونہ','nargis':'نرگس','parveen':'پروین','shabana':'شبانہ','shagufta':'شگفتہ','tehmina':'تہمینہ','yasmeen yasmin':'یاسمین','zubaida':'زبیدہ','naseem':'نسیم','shaheen':'شاہین','bibi':'بی بی','begum':'بیگم',
+    // places and address words
+    'multan':'ملتان','islampur':'اسلام پور','ahmadpur ahmedpur':'احمد پور','sharqia sharqiya sharqi':'شرقیہ','lahore':'لاہور','karachi':'کراچی','islamabad':'اسلام آباد','rawalpindi pindi':'راولپنڈی','faisalabad':'فیصل آباد','bahawalpur':'بہاولپور','bahawalnagar':'بہاولنگر','sahiwal':'ساہیوال','sargodha':'سرگودھا','gujranwala':'گوجرانوالہ','sialkot':'سیالکوٹ','peshawar':'پشاور','quetta':'کوئٹہ','hyderabad':'حیدرآباد','sukkur':'سکھر','jhang':'جھنگ','khanewal':'خانیوال','vehari':'وہاڑی','lodhran':'لودھراں','muzaffargarh':'مظفر گڑھ','dera':'ڈیرہ','ghazi':'غازی','rajanpur':'راجن پور','layyah':'لیہ','shujabad':'شجاع آباد','jalalpur':'جلال پور','pirwala':'پیر والا','kabirwala':'کبیر والا','mailsi':'میلسی','burewala':'بوریوالا','punjab':'پنجاب','sindh':'سندھ','pakistan':'پاکستان','road rd':'روڈ','street st':'اسٹریٹ','lane gali':'گلی','near':'قریب','behind':'پیچھے','opposite':'سامنے','chowk':'چوک','bazar bazaar':'بازار','mohalla mohallah':'محلہ','colony':'کالونی','town':'ٹاؤن','village vill':'گاؤں','chak':'چک','mauza':'موضع','tehsil':'تحصیل','district dist':'ضلع','city':'شہر','house':'مکان','home':'گھر','residence':'رہائش گاہ','hall':'ہال','marquee':'مارکی','lawn':'لان','garden':'گارڈن','banquet':'بینکوئٹ','hotel':'ہوٹل','restaurant':'ریسٹورنٹ','club':'کلب','mess':'میس','garrison':'گیریژن','cantt cantonment':'کینٹ','masjid':'مسجد','mosque':'مسجد','school':'اسکول','college':'کالج','university':'یونیورسٹی','plaza':'پلازہ','park':'پارک','stadium':'اسٹیڈیم','ground':'گراؤنڈ','gate':'گیٹ','main':'مین','new':'نیا','old':'پرانا','hospital':'ہسپتال','bank':'بینک','station':'اسٹیشن','bypass':'بائی پاس','canal':'کینال','bridge':'پل','sector':'سیکٹر','block':'بلاک','phase':'فیز','model':'ماڈل','green':'گرین','royal':'رائل','grand':'گرینڈ','palace':'پیلس','pearl':'پرل','star':'اسٹار','moon':'مون','paradise':'پیراڈائز','view':'ویو','heights':'ہائٹس','avenue':'ایونیو','square':'اسکوائر','center centre':'سینٹر','sweets':'سویٹس','shop':'دکان','market':'مارکیٹ','floor':'منزل','flat':'فلیٹ','society':'سوسائٹی','nagar':'نگر','abad':'آباد','pur':'پور','garh':'گڑھ','wala':'والا','wali':'والی','sharif':'شریف',
+    // occasions
+    'sehra':'سہرا','bandi':'بندی','mehndi mehandi':'مہندی','barat baraat':'بارات','walima waleema valima':'ولیمہ','nikah nikkah':'نکاح','rukhsati ruksati':'رخصتی','dholki':'ڈھولکی','mayun mayoon':'مایوں','ubtan':'ابٹن','reception':'ریسیپشن','engagement':'منگنی','ceremony':'تقریب','function':'تقریب','dinner':'ڈنر','lunch':'لنچ','party':'پارٹی','qawali qawwali':'قوالی','night':'رات','evening':'شام','morning':'صبح','wedding':'شادی','invitation':'دعوت','invited':'مدعو','inshaallah inshallah':'ان شاء اللہ','bismillah':'بسم اللہ',
+    // professions
+    'paf':'پی اے ایف','army':'آرمی','navy':'نیوی','pak':'پاک','pharmacist':'فارماسسٹ','teacher':'ٹیچر','advocate':'ایڈووکیٹ','major':'میجر','captain capt':'کیپٹن','colonel col':'کرنل','general gen':'جنرل','lieutenant lt':'لیفٹیننٹ','police':'پولیس','manager':'مینیجر','professor prof':'پروفیسر',
+    // small words
+    'and':'اور','at':'پر','on':'پر','in':'میں','of':'کا','to':'کو','for':'کے لیے','with':'کے ساتھ','from':'سے','the':'','is':'ہے','are':'ہیں','by':'از','pm am':'بجے','no':'نہیں','yes':'جی ہاں','kindly please':'براہِ کرم','parking':'پارکنگ','available':'دستیاب','dress':'لباس','code':'کوڈ','formal':'فارمل','children':'بچے','welcome':'خوش آمدید','time':'وقت','venue':'مقام','date':'تاریخ','gifts':'تحائف','gift':'تحفہ','free':'مفت','family':'فیملی','guests':'مہمان','guest':'مہمان','special':'خاص','invite':'دعوت'
+  };
+  const D = {};
+  Object.entries(RAW).forEach(([ks, v]) => ks.split(' ').forEach(k => { D[k] = v; }));
+
+  const C = {b:'ب',c:'ک',d:'د',f:'ف',g:'گ',h:'ہ',j:'ج',k:'ک',l:'ل',m:'م',n:'ن',p:'پ',q:'ق',r:'ر',s:'س',t:'ت',v:'و',w:'و',x:'کس',z:'ز'};
+  const DG = {kh:'خ',gh:'غ',sh:'ش',ch:'چ',zh:'ژ',th:'تھ',dh:'دھ',bh:'بھ',jh:'جھ',ph:'ف',rh:'ڑھ'};
+  const isV = ch => !!ch && 'aeiou'.includes(ch);
+  function phon(w){
+    w = w.toLowerCase().replace(/[^a-z]/g, '').replace(/ck/g, 'k').replace(/([bcdfghjklmnpqrstvwxz])\1/g, '$1');
+    let o = '', i = 0; const n = w.length;
+    while(i < n){
+      const c = w[i], two = w.substr(i, 2), nx = w[i+1], nx2 = w[i+2];
+      if(DG[two]){ o += DG[two]; i += 2; continue; }
+      if(c === 'y'){ o += 'ی'; i++; continue; }
+      if(!isV(c)){ o += C[c] || ''; i++; continue; }
+      if(i === 0){
+        if(two === 'aa'){ o += 'آ'; i += 2; continue; }
+        o += (c === 'o') ? 'او' : 'ا'; i++; continue;
+      }
+      if(two === 'aa'){ o += 'ا'; i += 2; continue; }
+      if(two === 'ee' || two === 'ea' || two === 'ie' || two === 'ii'){ o += 'ی'; i += 2; continue; }
+      if(two === 'oo' || two === 'ou' || two === 'uu'){ o += 'و'; i += 2; continue; }
+      if(two === 'ai' || two === 'ay' || two === 'ei'){ o += 'ے'; i += 2; continue; }
+      if(two === 'au' || two === 'aw'){ o += 'او'; i += 2; continue; }
+      const last = i === n - 1;
+      if(c === 'a'){
+        if(nx === 'h' && i + 2 === n){ i++; continue; }
+        if(last) o += 'ا'; else if(!isV(nx) && isV(nx2)) o += 'ا';
+        i++; continue;
+      }
+      if(c === 'o'){ o += 'و'; i++; continue; }
+      if(c === 'i' || c === 'e'){ if(last) o += 'ی'; i++; continue; }
+      if(c === 'u'){ if(last) o += 'و'; i++; continue; }
+      i++;
+    }
+    return o;
+  }
+  const norm = s => String(s || '').replace(/\bs\s*\/\s*o\b/gi, 'ولد').replace(/\bd\s*\/\s*o\b/gi, 'دختر').replace(/\bw\s*\/\s*o\b/gi, 'زوجہ');
+  const punct = t => t.replace(/,/g, '،').replace(/\?/g, '؟').replace(/;/g, '؛').replace(/&/g, ' اور ');
+  const tidy = s => s.replace(/\s{2,}/g, ' ').replace(/\s+([،؟؛])/g, '$1').trim();
+  const key = t => t.toLowerCase().replace(/'/g, '');
+  const known = k => Object.prototype.hasOwnProperty.call(D, k);
+  const cache = {};
+  async function online(k){
+    if(k in cache) return cache[k];
+    try{
+      const ctl = new AbortController(); const tm = setTimeout(() => ctl.abort(), 2500);
+      const r = await fetch('https://inputtools.google.com/request?text=' + encodeURIComponent(k) + '&itc=ur-t-i0-und&num=1&cp=0&cs=1&ie=utf-8&oe=utf-8&app=demopage', {signal: ctl.signal});
+      clearTimeout(tm); const j = await r.json();
+      return cache[k] = (j && j[0] === 'SUCCESS' && j[1][0][1][0]) || null;
+    }catch(e){ return cache[k] = null; }
+  }
+  return {
+    text(s){ return tidy(norm(s).split(/([A-Za-z']+)/).map((t, i) => i % 2 ? (known(key(t)) ? D[key(t)] : phon(key(t))) : punct(t)).join('')); },
+    async textOnline(s){
+      const parts = norm(s).split(/([A-Za-z']+)/), out = [];
+      for(let i = 0; i < parts.length; i++){
+        const t = parts[i];
+        if(i % 2){ const k = key(t); if(known(k)) out.push(D[k]); else out.push((await online(k)) || phon(k)); }
+        else out.push(punct(t));
+      }
+      return tidy(out.join(''));
+    }
+  };
+})();
 
 /* ================================ ADMIN ================================ */
 let ev = [];   // events being edited
 const blank = () => ({slug:'',paid:false,amount:'',customer:'',phone:'',groomEn:'',groomUr:'',brideEn:'',brideUr:'',
   groomParentsEn:'',groomParentsUr:'',brideParentsEn:'',brideParentsUr:'',introEn:'',introUr:'',rsvpBy:'',rsvpNames:[],rsvpNamesUr:[],know:[],knowUr:[],
-  hashtag:'',accent:'',tpl:'royal',music:'soft1',musicUrl:'',lang:'en',events:[{titleEn:'Mehndi Night',titleUr:'مہندی'},{titleEn:'Barat',titleUr:'بارات'},{titleEn:'Waleema',titleUr:'ولیمہ'}]});
+  hashtag:'',placeEn:'',placeUr:'',accent:'',tpl:'royal',music:'soft1',musicUrl:'',lang:'en',events:[{titleEn:'Mehndi Night',titleUr:'مہندی'},{titleEn:'Barat',titleUr:'بارات'},{titleEn:'Waleema',titleUr:'ولیمہ'}]});
 
 function adminShell(html){ document.body.className='lang-en'; $app.innerHTML = `<div class="adm">${html}</div>`; }
 
@@ -997,6 +1165,8 @@ function editView(d,isNew){
   const v = k => esc(d[k] ?? '');
   adminShell(`
   <div class="row"><h1 class="serif">${isNew?'New invitation':'Edit invitation'}</h1><button class="btn ghost" id="back">← Back</button></div>
+  <p class="small">✨ Urdu is made automatically from the English you type (best for names and places). Please check the spelling and correct it if needed.</p>
+  <button type="button" class="btn sm" id="autoUr">✨ Fill all empty Urdu boxes</button>
   <form id="ef">
   <div class="panel card"><b>Link &amp; payment</b>
     <div class="grid2"><label>Link name (letters, numbers, hyphen)<input name="slug" value="${v('slug')}" ${isNew?'':'readonly'} required placeholder="ali-weds-sara"></label>
@@ -1012,6 +1182,7 @@ function editView(d,isNew){
     <label>Bride (English, optional)<input name="brideEn" value="${v('brideEn')}"></label><label>Bride (Urdu, optional)<input name="brideUr" dir="rtl" value="${v('brideUr')}"></label>
     <label>Groom's parents (English)<input name="groomParentsEn" value="${v('groomParentsEn')}" placeholder="Mr and Mrs …"></label><label>Groom's parents (Urdu)<input name="groomParentsUr" dir="rtl" value="${v('groomParentsUr')}"></label>
     <label>Bride's parents (English)<input name="brideParentsEn" value="${v('brideParentsEn')}"></label><label>Bride's parents (Urdu)<input name="brideParentsUr" dir="rtl" value="${v('brideParentsUr')}"></label>
+    <label>Place / city (English, shown under the names)<input name="placeEn" value="${v('placeEn')}" placeholder="Islampur Multan"></label><label>Place / city (Urdu)<input name="placeUr" dir="rtl" value="${v('placeUr')}"></label>
     <label>Invitation message (English, optional)<textarea name="introEn">${v('introEn')}</textarea></label><label>Invitation message (Urdu, optional)<textarea name="introUr" dir="rtl">${v('introUr')}</textarea></label></div></div>
 
   <div class="panel card"><div class="row"><b>Events</b><button type="button" class="btn sm" id="addEv">+ Add event</button></div><div id="evs"></div></div>
@@ -1040,6 +1211,41 @@ function editView(d,isNew){
   document.getElementById('evs').addEventListener('click', e => { if(e.target.dataset.rm!=null){ ev.splice(+e.target.dataset.rm,1); renderEv(); } });
   document.getElementById('addEv').onclick = () => { ev.push({}); renderEv(); };
   document.getElementById('back').onclick = listView;
+  /* ---- automatic Urdu: type English, the Urdu box fills itself (you can still edit it) ---- */
+  const form = document.getElementById('ef');
+  const PAIRS = {groomEn:'groomUr', brideEn:'brideUr', groomParentsEn:'groomParentsUr', brideParentsEn:'brideParentsUr', placeEn:'placeUr', rsvpNames:'rsvpNamesUr', know:'knowUr'};
+  const URNAMES = Object.values(PAIRS);
+  form.addEventListener('input', e => {
+    const t = e.target, ur = PAIRS[t.name];
+    if(ur){ const u = form.elements[ur]; if(u && (!u.value.trim() || u.dataset.auto === '1')){ u.value = UR.text(t.value); u.dataset.auto = '1'; } }
+    else if(URNAMES.includes(t.name)) t.dataset.auto = '0';
+  });
+  form.addEventListener('change', async e => {
+    const t = e.target, ur = PAIRS[t.name]; if(!ur) return;
+    const u = form.elements[ur]; if(!u || u.dataset.auto !== '1') return;
+    const src = t.value, out = await UR.textOnline(src);
+    if(t.value === src && u.dataset.auto === '1') u.value = out;
+  });
+  const EVP = {titleEn:'titleUr', venue:'venueUr', address:'addressUr', note:'noteUr'}, EVU = Object.values(EVP);
+  const evBox = document.getElementById('evs');
+  evBox.addEventListener('input', e => {
+    const t = e.target, k = t.dataset.k, i = +t.dataset.i; if(k === undefined || !ev[i]) return;
+    ev[i].auto = ev[i].auto || {};
+    if(EVP[k]){ const uk = EVP[k]; if(!ev[i][uk] || ev[i].auto[uk]){ ev[i][uk] = UR.text(t.value); ev[i].auto[uk] = true; const u = evBox.querySelector(`[data-i="${i}"][data-k="${uk}"]`); if(u) u.value = ev[i][uk]; } }
+    else if(EVU.includes(k)) ev[i].auto[k] = false;
+  });
+  document.getElementById('autoUr').onclick = async () => {
+    const btn = document.getElementById('autoUr'); btn.textContent = 'Working…';
+    for(const [en, ur] of Object.entries(PAIRS)){
+      const a = form.elements[en], u = form.elements[ur];
+      if(a && u && a.value.trim() && (!u.value.trim() || u.dataset.auto === '1')){ u.value = await UR.textOnline(a.value); u.dataset.auto = '1'; }
+    }
+    for(const row of ev){
+      row.auto = row.auto || {};
+      for(const [en, ur] of Object.entries(EVP)){ if(row[en] && (!row[ur] || row.auto[ur])){ row[ur] = await UR.textOnline(row[en]); row.auto[ur] = true; } }
+    }
+    renderEv(); btn.textContent = '✨ Fill all empty Urdu boxes';
+  };
   document.getElementById('mtest').onclick = () => { if(Mus.playing){ Mus.stop(); return; } const f = new FormData(document.getElementById('ef')); if(f.get('music') !== 'none') Mus.start(f.get('music'), f.get('musicUrl')); };
 
   document.getElementById('ef').onsubmit = async e => {
@@ -1049,11 +1255,11 @@ function editView(d,isNew){
     if(isNew && (await getDoc(doc(db,'invites',slug))).exists() && !confirm('This link name already exists. Overwrite it?')) return;
     const lines = k => String(f.get(k)||'').split('\n').map(s=>s.trim()).filter(Boolean);
     const data = {};
-    ['lang','customer','phone','amount','groomEn','groomUr','brideEn','brideUr','groomParentsEn','groomParentsUr','brideParentsEn','brideParentsUr','introEn','introUr','rsvpBy','hashtag','music','musicUrl'].forEach(k=>data[k]=String(f.get(k)||'').trim());
+    ['lang','customer','phone','amount','groomEn','groomUr','brideEn','brideUr','groomParentsEn','groomParentsUr','brideParentsEn','brideParentsUr','introEn','introUr','rsvpBy','hashtag','placeEn','placeUr','music','musicUrl'].forEach(k=>data[k]=String(f.get(k)||'').trim());
     data.tpl = TPL[f.get('tpl')] ? f.get('tpl') : 'royal';
     data.fall = f.get('fall') === 'on';
     data.accent = f.get('accentOn')==='on' ? String(f.get('accent')) : '';
-    Object.assign(data,{paid:f.get('paid')==='on',rsvpNames:lines('rsvpNames'),rsvpNamesUr:lines('rsvpNamesUr'),know:lines('know'),knowUr:lines('knowUr'),events:ev.filter(x=>x.date||x.titleEn),updated:serverTimestamp()});
+    Object.assign(data,{paid:f.get('paid')==='on',rsvpNames:lines('rsvpNames'),rsvpNamesUr:lines('rsvpNamesUr'),know:lines('know'),knowUr:lines('knowUr'),events:ev.filter(x=>x.date||x.titleEn).map(({auto,...e})=>e),updated:serverTimestamp()});
     try{ await setDoc(doc(db,'invites',slug),data,{merge:true}); sv.innerHTML=`<span class="msg ok">Saved · ${esc(linkFor(slug))}</span>`; }
     catch(err){ console.error(err); sv.innerHTML='<span class="msg err">Could not save. Check your admin access.</span>'; }
   };

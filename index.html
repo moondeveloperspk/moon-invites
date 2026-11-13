@@ -425,12 +425,12 @@ th,td{padding:8px 6px;border-bottom:1px solid var(--line);text-align:start;verti
 
 /* =====================  1) PASTE YOUR FIREBASE CONFIG HERE  ===================== */
 const firebaseConfig = {
-  apiKey: "PASTE_API_KEY",
-  authDomain: "PASTE_PROJECT.firebaseapp.com",
-  projectId: "PASTE_PROJECT_ID",
-  storageBucket: "PASTE_PROJECT.appspot.com",
-  messagingSenderId: "PASTE_SENDER_ID",
-  appId: "PASTE_APP_ID"
+  apiKey: "AIzaSyCFfZEEbriPFmdV0twsZf9iMtxx5jBZikM",
+  authDomain: "moon-invites.firebaseapp.com",
+  projectId: "moon-invites",
+  storageBucket: "moon-invites.firebasestorage.app",
+  messagingSenderId: "1023328711622",
+  appId: "1:1023328711622:web:20e2c7d07e2f53a9b738c7"
 };
 /* Shown on locked (unpaid) invitations */
 /* "hash" = works on any free static host (GitHub Pages, Netlify, Cloudflare Pages): link looks like site/#ali-weds-sara
@@ -937,9 +937,9 @@ async function showInvite(slug){
   ${(d.know||[]).length?`<section class="blk center" id="know"><div class="wrap"><h3 class="serif">${T('Good to know','ضروری باتیں')}</h3><ul class="know">${d.know.map((k,i)=>`<li>${T(k,(d.knowUr||[])[i])}</li>`).join('')}</ul></div></section>`:''}
 
   <footer class="foot">${tid === 'card' ? clusterSvg('cc3') + clusterSvg('cc4') : ''}<div class="wrap">
-    <p>${T('With best compliments','بصد احترام')}</p>
+    <p>${T('With love, always','خلوص و محبت کے ساتھ')}</p>
     <div class="names serif">${NAMES(d)}</div>
-    <p>${T(d.closingEn || 'Your presence will make our joy complete.', d.closingUr || (d.closingEn ? d.closingEn : 'آپ کی آمد ہماری خوشیوں میں اضافے کا باعث ہوگی۔'))}</p>
+    <p>${T('We cannot wait to celebrate with you.','ہم آپ کے ساتھ خوشیاں منانے کے منتظر ہیں۔')}</p>
     ${d.hashtag?`<p>#${esc(d.hashtag)}</p>`:''}
     <div class="evact"><a class="btn sm" id="wa" href="#">${T('Share on WhatsApp','واٹس ایپ پر شیئر کریں')}</a><button class="btn sm ghost" id="copy">${T('Copy link','لنک کاپی کریں')}</button></div>
     <p class="small" style="margin-top:30px">${T('Made by ' + BRAND.name, 'تیار کردہ: ' + BRAND.nameUr)}<br><a class="mk" href="tel:+${BRAND.wa}">${BRAND.phone.replace(/^(\d{4})(\d+)$/, '$1 $2')}</a> &nbsp;|&nbsp; <a class="mk" href="https://wa.me/${BRAND.wa}">WhatsApp</a></p>
@@ -1115,7 +1115,7 @@ const UR = (() => {
 let ev = [];   // events being edited
 const blank = () => ({slug:'',paid:false,amount:'',customer:'',phone:'',groomEn:'',groomUr:'',brideEn:'',brideUr:'',
   groomParentsEn:'',groomParentsUr:'',brideParentsEn:'',brideParentsUr:'',introEn:'',introUr:'',rsvpBy:'',rsvpNames:[],rsvpNamesUr:[],know:[],knowUr:[],
-  hashtag:'',placeEn:'',placeUr:'',closingEn:'',closingUr:'',accent:'',tpl:'royal',music:'soft1',musicUrl:'',lang:'en',events:[{titleEn:'Mehndi Night',titleUr:'مہندی'},{titleEn:'Barat',titleUr:'بارات'},{titleEn:'Waleema',titleUr:'ولیمہ'}]});
+  hashtag:'',placeEn:'',placeUr:'',accent:'',tpl:'royal',music:'soft1',musicUrl:'',lang:'en',events:[{titleEn:'Mehndi Night',titleUr:'مہندی'},{titleEn:'Barat',titleUr:'بارات'},{titleEn:'Waleema',titleUr:'ولیمہ'}]});
 
 function adminShell(html){ document.body.className='lang-en'; $app.innerHTML = `<div class="adm">${html}</div>`; }
 
@@ -1227,7 +1227,6 @@ function editView(d,isNew){
     <label>Same names in Urdu (same order)<textarea name="rsvpNamesUr" dir="rtl">${esc((d.rsvpNamesUr||[]).join('\n'))}</textarea></label></div>
     <div class="grid2"><label>Good to know (English, one per line)<textarea name="know">${esc((d.know||[]).join('\n'))}</textarea></label>
     <label>Good to know in Urdu (same order)<textarea name="knowUr" dir="rtl">${esc((d.knowUr||[]).join('\n'))}</textarea></label></div>
-    <div class="grid2"><label>Closing message at the end (English, optional)<input name="closingEn" value="${v('closingEn')}" placeholder="Your presence will make our joy complete."></label><label>Closing message (Urdu, optional)<input name="closingUr" dir="rtl" value="${v('closingUr')}" placeholder="آپ کی آمد ہماری خوشیوں میں اضافے کا باعث ہوگی۔"></label></div>
     <div class="grid2"><label>Background music<select name="music">${Object.entries(MUSIC).map(([k,m])=>`<option value="${k}" ${(d.music||'none')===k?'selected':''}>${m.name}</option>`).join('')}</select></label>
     <label>Music file link (only for “My own file”)<input name="musicUrl" value="${v('musicUrl')}" placeholder="music/song.mp3"></label></div>
     <div><button type="button" class="btn sm ghost" id="mtest">▶ Test music</button> <span class="small">Plays after the guest taps the cover. Built-in tunes need no file.</span></div></div>
@@ -1296,7 +1295,7 @@ function editView(d,isNew){
     if(isNew && (await getDoc(doc(db,'invites',slug))).exists() && !confirm('This link name already exists. Overwrite it?')) return;
     const lines = k => String(f.get(k)||'').split('\n').map(s=>s.trim()).filter(Boolean);
     const data = {};
-    ['lang','customer','phone','amount','groomEn','groomUr','brideEn','brideUr','groomParentsEn','groomParentsUr','brideParentsEn','brideParentsUr','introEn','introUr','rsvpBy','hashtag','placeEn','placeUr','closingEn','closingUr','music','musicUrl'].forEach(k=>data[k]=String(f.get(k)||'').trim());
+    ['lang','customer','phone','amount','groomEn','groomUr','brideEn','brideUr','groomParentsEn','groomParentsUr','brideParentsEn','brideParentsUr','introEn','introUr','rsvpBy','hashtag','placeEn','placeUr','music','musicUrl'].forEach(k=>data[k]=String(f.get(k)||'').trim());
     data.tpl = TPL[f.get('tpl')] ? f.get('tpl') : 'royal';
     data.fall = f.get('fall') === 'on';
     data.accent = f.get('accentOn')==='on' ? String(f.get('accent')) : '';

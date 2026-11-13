@@ -1130,6 +1130,7 @@ function loginView(msg=''){
     try{ await signInWithEmailAndPassword(auth,f.get('e'),f.get('p')); }catch(err){ loginView('Wrong email or password.'); } };
 }
 
+let CUR_ROWS = [];
 async function listView(){
   Mus.stop();
   adminShell(`<p class="hint">Loading…</p>`);
@@ -1137,6 +1138,7 @@ async function listView(){
   try{ const s = await getDocs(collection(db,'invites')); s.forEach(x => rows.push({id:x.id,...x.data()})); }
   catch(e){ return adminShell(`<div class="msg err">Cannot read invitations. This account is not an admin — check firestore.rules.</div><button class="btn ghost" id="so">Sign out</button>`), document.getElementById('so').onclick=()=>signOut(auth); }
   rows.sort((a,b)=>(b.updated?.seconds||0)-(a.updated?.seconds||0));
+  CUR_ROWS = rows;
   const paid = rows.filter(r=>r.paid), total = paid.reduce((n,r)=>n+(+r.amount||0),0);
   adminShell(`
   <div class="row"><h1 class="serif">Invitations</h1><div style="display:flex;gap:8px"><button class="btn" id="new">+ New invitation</button><button class="btn ghost" id="so">Sign out</button></div></div>
@@ -1147,6 +1149,7 @@ async function listView(){
     <div class="small">${esc((TPL[r.tpl]||TPL.royal).name)} · ${esc(linkFor(r.id))}${r.customer?` · ${esc(r.customer)}`:''}${r.phone?` · ${esc(r.phone)}`:''}${r.amount?` · Rs ${esc(r.amount)}`:''}</div>
     <div class="evact">
       <button class="btn sm" data-edit="${esc(r.id)}">Edit</button>
+      <button class="btn sm ghost" data-dup="${esc(r.id)}">Duplicate</button>
       <a class="btn sm ghost" target="_blank" href="${esc(previewFor(r.id))}">Preview</a>
       <button class="btn sm ghost" data-copy="${esc(r.id)}">Copy link</button>
       <button class="btn sm ghost" data-wa="${esc(r.id)}" data-ph="${esc(r.phone||'')}">Send on WhatsApp</button>
@@ -1166,6 +1169,7 @@ async function listView(){
   $app.querySelectorAll('[data-del]').forEach(b=>b.onclick=async()=>{ if(confirm('Delete this invitation permanently?')){ await deleteDoc(doc(db,'invites',b.dataset.del)); listView(); } });
   $app.querySelectorAll('[data-rsvp]').forEach(b=>b.onclick=()=>rsvpView(b.dataset.rsvp));
   $app.querySelectorAll('[data-off]').forEach(b=>b.onclick=()=>exportOffline(byId(b.dataset.off)));
+  $app.querySelectorAll('[data-dup]').forEach(b=>b.onclick=()=>editView(importCopy(byId(b.dataset.dup)),true));
 }
 
 /* Offline copy: one HTML file with this invitation inside. Works without internet or hosting; guests reply through WhatsApp. */
@@ -1180,6 +1184,13 @@ function exportOffline(r){
   a.download = r.id + '_offline.html'; a.click();
 }
 
+/* Copy of an existing invitation, ready to be saved as a NEW one (new link name, edit anything, delete what you don't need) */
+function importCopy(r){
+  const d = JSON.parse(JSON.stringify(r)); delete d.id; delete d.updated; d.amount = ''; d._imported = r.id;
+  const used = new Set(CUR_ROWS.map(x => x.id)); let n = 2, s = r.id + '-' + n; while(used.has(s)) s = r.id + '-' + (++n);
+  d.slug = s; return d;
+}
+
 function editView(d,isNew){
   ev = JSON.parse(JSON.stringify(d.events||[]));
   const v = k => esc(d[k] ?? '');
@@ -1188,6 +1199,9 @@ function editView(d,isNew){
   <p class="small">✨ Urdu is made automatically from the English you type (best for names and places). Please check the spelling and correct it if needed.</p>
   <button type="button" class="btn sm" id="autoUr">✨ Fill all empty Urdu boxes</button>
   <form id="ef">
+  ${isNew ? `<div class="panel card"><b>Start from an existing invitation</b>
+    <label>Import data from<select id="impSel"><option value="">— start empty —</option>${CUR_ROWS.map(r => `<option value="${esc(r.id)}">${esc(pairTxt(r))} (${esc(r.id)})</option>`).join('')}</select></label>
+    ${d._imported ? `<div class="msg ok">Copied from “${esc(d._imported)}”. Change anything, delete the events or options you do not need, give it a new link name, then Save.</div>` : `<span class="small">Pick one to copy its design, names, events, music and everything else. Then edit it and save as a new invitation.</span>`}</div>` : ''}
   <div class="panel card"><b>Link &amp; payment</b>
     <div class="grid2"><label>Link name (letters, numbers, hyphen)<input name="slug" value="${v('slug')}" ${isNew?'':'readonly'} required placeholder="ali-weds-sara"></label>
     <label>Language when opened<select name="lang"><option value="en" ${d.lang==='en'?'selected':''}>English</option><option value="ur" ${d.lang==='ur'?'selected':''}>اردو</option></select></label></div>
@@ -1231,6 +1245,12 @@ function editView(d,isNew){
   document.getElementById('evs').addEventListener('click', e => { if(e.target.dataset.rm!=null){ ev.splice(+e.target.dataset.rm,1); renderEv(); } });
   document.getElementById('addEv').onclick = () => { ev.push({}); renderEv(); };
   document.getElementById('back').onclick = listView;
+  const impSel = document.getElementById('impSel');
+  if(impSel) impSel.onchange = () => {
+    const r = CUR_ROWS.find(x => x.id === impSel.value); if(!r) return;
+    const nd = importCopy(r), typed = document.querySelector('#ef [name=slug]').value.trim();
+    if(typed) nd.slug = typed; editView(nd, true);
+  };
   /* ---- automatic Urdu: type English, the Urdu box fills itself (you can still edit it) ---- */
   const form = document.getElementById('ef');
   const PAIRS = {groomEn:'groomUr', brideEn:'brideUr', groomParentsEn:'groomParentsUr', brideParentsEn:'brideParentsUr', placeEn:'placeUr', rsvpNames:'rsvpNamesUr', know:'knowUr'};

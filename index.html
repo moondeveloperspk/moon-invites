@@ -942,7 +942,7 @@ async function showInvite(slug){
     <p>${T(d.closingEn || 'Your presence is the most precious gift for us.', d.closingUr || (d.closingEn ? d.closingEn : 'آپ کی موجودگی ہمارے لیے سب سے قیمتی تحفہ ہے۔'))}</p>
     ${d.hashtag?`<p>#${esc(d.hashtag)}</p>`:''}
     <div class="evact"><a class="btn sm" id="wa" href="#">${T('Share on WhatsApp','واٹس ایپ پر شیئر کریں')}</a><button class="btn sm ghost" id="copy">${T('Copy link','لنک کاپی کریں')}</button></div>
-    <p class="small" style="margin-top:30px">${T('Made by ' + BRAND.name, 'تیار کردہ: ' + BRAND.nameUr)}<br><a class="mk" href="tel:+${BRAND.wa}">${BRAND.phone.replace(/^(\d{4})(\d+)$/, '$1 $2')}</a> &nbsp;|&nbsp; <a class="mk" href="https://wa.me/${BRAND.wa}">WhatsApp</a></p>
+    <p class="small" style="margin-top:30px">${T('Want a card like this? Contact ' + BRAND.name, 'ایسا کارڈ چاہیے؟ رابطہ کریں: ' + BRAND.nameUr)}<br><a class="mk" href="tel:+${BRAND.wa}">${BRAND.phone.replace(/^(\d{4})(\d+)$/, '$1 $2')}</a> &nbsp;|&nbsp; <a class="mk" href="https://wa.me/${BRAND.wa}">WhatsApp</a></p>
   </div></footer></div>
 
   <nav class="tabbar"><a href="#events" data-go="events">${T('Events','تقریبات')}</a><a href="#rsvp" data-go="rsvp">${T('Reply','جواب')}</a><a href="#" id="shareTab">${T('Share','شیئر')}</a></nav>`;
